@@ -1,0 +1,656 @@
+body {
+  font-family: "Poppins", sans-serif;
+  height: 5000px;
+}
+/* HERO SECTION CSS START */
+.hero {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  overflow: hidden; /* Menghindari blur keluar batas */
+}
+
+/* Background Blur dengan Pseudo-Element */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("https://png.pngtree.com/thumb_back/fw800/background/20221010/pngtree-the-ringed-hands-of-the-newlyweds-groom-and-bride-photo-image_4187092.jpg")
+    no-repeat center center/cover;
+  filter: blur(8px); /* Efek blur hanya pada gambar */
+  z-index: 0;
+}
+
+/* Overlay Gelap Agar Teks Lebih Jelas */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+/* Konten Hero (Teks & Tombol) */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  animation: fadeIn 2s ease-in-out;
+  letter-spacing: 1.4px;
+  background-color: rgba(217, 217, 217, 0.11);
+  padding: 25px;
+}
+
+.hero-content h1 {
+  font-size: 87px;
+  font-family: "Great Vibes", cursive;
+  text-shadow: 2px 4px 4.8px rgba(255, 255, 255, 0.25);
+}
+
+.hero-content .first {
+  font-size: 40px !important;
+  text-shadow: 2px 4px 4.8px rgba(255, 255, 255, 0.44);
+}
+
+.hero-content .two {
+  font-size: 19px;
+}
+
+.hero-content .three {
+  font-size: 20px;
+}
+
+/* Efek Fade In */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tombol Undangan */
+.btn-invite {
+  background: #ff4081;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 50px;
+  transition: 0.3s;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn-invite:hover {
+  background: #e91e63;
+  box-shadow: 0 0 10px rgba(255, 64, 129, 0.5);
+}
+
+/* HERO SECTION CSS END */
+
+/* NAVBAR SECTION CSS START */
+
+.navbar {
+  background: rgba(168, 168, 168, 0.2) !important;
+  backdrop-filter: blur(5px);
+  z-index: 999;
+}
+.navbar-brand {
+  font-family: "Great Vibes", cursive;
+  font-size: 27px;
+  color: rgb(0, 0, 0);
+  transition: 0.3s;
+  letter-spacing: 3px;
+}
+
+.navbar-brand:hover {
+  color: #ffc107;
+}
+.nav-link {
+  color: rgb(20, 20, 20) !important;
+  transition: 0.3s;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 1px;
+}
+.nav-link:hover {
+  color: #ffc107 !important;
+}
+
+.navbar-toggler {
+  color: rgb(131, 131, 131, 0.4);
+  border-radius: 6px;
+  background-color: rgba(133, 133, 133, 0.4);
+}
+
+.navbar-toggler-icon {
+  color: blue;
+}
+
+/* NAVBAR SECTION CSS END */
+
+/* MEMPELAI SECTION CSS START */
+
+.wedding-section {
+  text-align: center;
+  padding: 50px 20px;
+  background-image: url(img/mempelai.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: hidden;
+}
+
+.wedding-section h2,
+.wedding-section p,
+.wedding-section .row {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+.wedding-section h2 {
+  animation-delay: 0.2s;
+  font-family: "Great Vibes", cursive;
+  font-size: 4em;
+  font-weight: 500;
+}
+
+.wedding-section p {
+  animation-delay: 0.4s;
+}
+
+.wedding-section .ayat {
+}
+
+.wedding-section .row {
+  animation-delay: 0.6s;
+}
+
+.wedding-section .card-img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(0.8);
+  animation: scaleUp 1s ease-out forwards 0.8s;
+}
+
+.wedding-section .mempelai {
+  font-family: "Great Vibes", cursive;
+  font-size: 30px;
+}
+
+.wedding-section .tengah {
+  width: 190px;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  opacity: 0.9;
+  animation: fadeInBounce 1.2s ease-out forwards 1s;
+}
+
+.wedding-section .ayah-ibu {
+  color: #413c3c;
+  font-weight: 500;
+}
+
+/* Animasi Fade In dan Scale Up */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeInBounce {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* MEMPELAI SECTION CSS END */
+
+/* DETAIL ACARA SECTION CSS START */
+
+.detail-acara {
+  background-image: url(img/bg-acara.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  /* overflow: hidden; */
+  /* min-height: 70vh; */
+  padding-bottom: 100px !important;
+}
+
+.detail-acara .section-title {
+  font-family: "Great Vibes", cursive;
+  font-size: 4em;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.detail-acara .event-card {
+  border: 2px solid #333;
+  padding: 20px;
+  background-color: rgb(255, 255, 255, 0);
+  text-align: center;
+  /* position: relative; */
+}
+.event-title {
+  font-size: 30px;
+  font-family: "Great Vibes", cursive;
+  font-weight: 500;
+}
+
+.detail-acara .event-name {
+  font-size: 22px;
+  font-weight: bold;
+}
+.detail-acara .event-detail {
+  font-size: 18px;
+}
+.detail-acara .location {
+  font-weight: bold;
+  font-size: 20px;
+}
+.detail-acara .flower {
+  position: absolute;
+  width: 140px;
+  opacity: 0.9;
+}
+
+/* DETAIL ACARA SECTION CSS END */
+
+/* DETAIL CERITA CINTA SECTION CSS START */
+
+.love-story {
+  background-image: url(img/mempelai.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.love-story .section-title {
+  font-size: 4em;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: "Great Vibes", cursive;
+}
+.love-story .carousel-inner {
+}
+.love-story .story-card {
+  background: rgb(67, 63, 63, 0.1);
+  padding: 20px 0px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow:
+    -4px 0px 4px rgba(0, 0, 0, 0.15),
+    0px -4px 4px rgba(0, 0, 0, 0.15),
+    4px 0px 4px rgb(0, 0, 0, 0.15),
+    0px 4px 4px rgb(0, 0, 0, 0.15);
+  min-width: 200px;
+  margin: 40px;
+  padding: 40px;
+}
+.love-story .story-title {
+  font-size: 30px;
+  font-family: "Great Vibes", cursive;
+  font-weight: 500;
+}
+.love-story .story-detail {
+  font-size: 18px;
+  font-style: italic;
+  color: #2f2e2e;
+}
+.love-story .story-text {
+  font-size: 16px;
+}
+
+.bunga-cerita {
+  width: 140px;
+  opacity: 0.9;
+}
+
+.love-story .carousel-control-prev,
+.love-story .carousel-control-next {
+  width: 8%;
+}
+.love-story .carousel-control-prev-icon,
+.love-story .carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0.6;
+  border-radius: 3%;
+  margin-top: -30px;
+  padding: 30px;
+}
+
+/* DETAIL CERITA CINTA SECTION CSS END */
+
+/* DETAIL GALERY SECTION CSS START */
+
+.gallery-section {
+  text-align: center;
+  padding: 30px 0;
+  background-image: url(img/bg-galery.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: hidden !important;
+}
+
+.gallery-section .row {
+  margin: 30px;
+}
+.gallery-title {
+  font-size: 4em;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: "Great Vibes", cursive;
+}
+.gallery-section img {
+  width: 100%;
+  max-height: 320px;
+  border-radius: 0px;
+}
+
+.bunga-galery-1 {
+  width: 300px !important;
+  left: -60px !important;
+  opacity: 0.8;
+}
+.bunga-galery-2 {
+  width: 300px !important;
+  left: -120px !important;
+  top: 130px !important;
+  opacity: 0.8;
+}
+.bunga-galery-3 {
+  bottom: 70px !important;
+  right: -70px !important;
+  width: 300px !important;
+  position: absolute;
+  opacity: 0.8;
+}
+.bunga-galery-4 {
+  bottom: 280px !important;
+  right: -120px !important;
+  width: 300px !important;
+  position: absolute;
+  opacity: 0.8;
+}
+
+/* DETAIL GALERY SECTION CSS END */
+
+/* DETAIL RSVP SECTION CSS START */
+
+.rsvp-section {
+  padding: 70px 0;
+  background-image: url(img/bg-rsvp.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: hidden !important;
+}
+
+.rsvp-section .rsvp-title {
+  font-size: 50px;
+  font-family: "Great Vibes", cursive;
+  font-weight: bold;
+  color: #000;
+}
+
+.rsvp-section .rsvp-subtitle {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #433f3f;
+}
+
+.rsvp-section .rsvp-form-container {
+  background: linear-gradient(
+    to right,
+    rgba(67, 63, 63, 0.15) 0%,
+    rgba(88, 43, 43, 0.15) 100%
+  );
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 700px;
+  margin: 0px auto;
+}
+
+.rsvp-section .form-label {
+  font-weight: bold;
+  color: #333;
+  text-align: left !important;
+}
+
+.rsvp-section .form-control {
+  background: #f8f8f8;
+  border: none;
+  height: 45px;
+  border-radius: 5px;
+}
+
+.rsvp-section .btn-rsvp {
+  background: linear-gradient(
+    to right,
+    rgba(123, 117, 117, 0.84) 0%,
+    rgba(152, 140, 140, 0.84) 100%
+  );
+
+  color: white;
+  font-size: 18px;
+  padding: 10px 30px;
+  border-radius: 30px;
+  border: none;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.rsvp-section .btn-rsvp:hover {
+  background: #756b6b;
+}
+
+/* Bunga di pojok */
+.rsvp-section .flower-left {
+  position: absolute;
+  bottom: -20px;
+  left: -30px;
+  width: 120px;
+}
+
+.rsvp-section .flower-right {
+  position: absolute;
+  bottom: -20px;
+  right: -30px;
+  width: 120px;
+}
+
+.bunga-rsvp-1 {
+  left: 33px !important;
+  top: 524px;
+  opacity: 0.9;
+  width: 300px;
+}
+
+.bunga-rsvp-2 {
+  bottom: 70px !important; /* Sesuaikan posisi */
+  right: -100px !important; /* Pastikan gambar tidak keluar layar */
+  max-width: 200px; /* Ukuran lebih kecil untuk HP */
+  position: absolute;
+  opacity: 0.8;
+}
+
+/* DETAIL RSVP SECTION CSS END */
+
+/* Media Query Start */
+
+@media (max-width: 576px) {
+  /* Untuk ukuran HP */
+  .rsvp-section .rsvp-form-container {
+    padding: 30px 20px; /* Tambahkan padding kiri-kanan */
+    margin: 0 20px; /* Tambahkan margin jika perlu */
+  }
+}
+
+/* Media Query End */
+
+/* DETAIL UCAPAN CSS START */
+
+/* Bagian header */
+.ucapan {
+  background-image: url(img/bg-ucapan.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+/* Header */
+.header-wedding {
+  position: relative;
+  text-align: center;
+  padding: 40px 0;
+}
+.header-wedding h1 {
+  font-family: "Prata", serif;
+  font-weight: 500;
+  margin: 0;
+}
+.header-wedding img {
+  max-width: 220px;
+}
+
+/* Untuk layar kecil (HP) → stack vertikal */
+@media (max-width: 767.98px) {
+  .header-wedding {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+}
+
+/* Untuk layar medium ke atas (tablet/desktop) → kiri-kanan + logo tengah */
+@media (min-width: 768px) {
+  .header-wedding {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .header-wedding img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* Form section */
+.form-section {
+  background: rgb(248, 239, 239, 0.75);
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+.form-section h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 1.7rem;
+  text-shadow: 0px 4px 4px rgb(103, 81, 81, 0.25);
+}
+
+.form-section .form-control {
+  background-color: rgba(255, 255, 255, 0.83);
+}
+
+/* Card komentar */
+.comment-card {
+  /* background: #f9f9f9;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  padding: 15px; */
+  margin-bottom: 12px;
+}
+
+.comment-card strong {
+  color: #4a4646;
+  font-size: 22px;
+  letter-spacing: 1px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.comment-card p {
+  font-size: 12px;
+  /* text-indent: 36px; */
+  color: #5c5757;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 1px;
+}
+
+.comment-card small {
+  display: block;
+  color: #666;
+}
+
+/* Bagian terima kasih */
+.thanks-section {
+  text-align: center;
+  padding: 50px 20px;
+}
+.thanks-section h2 {
+  font-family: "Great Vibes", cursive;
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+}
+.thanks-section p {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+/* DETAIL UCAPAN CSS END */
